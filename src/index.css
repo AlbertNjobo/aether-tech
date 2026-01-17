@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color: #030304;
+  --accent-dim: #27272a;
+  --accent-glow: #ffffff;
+}
+
+body {
+  background-color: var(--bg-color);
+  overflow-x: hidden;
+  font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  @apply text-zinc-400 selection:bg-zinc-800 selection:text-zinc-100 antialiased font-sans;
+}
+
+article.article-content h2 {
+  @apply text-2xl md:text-3xl font-medium text-zinc-100 mt-8;
+}
+
+article.article-content h3 {
+  @apply text-xl md:text-2xl font-medium text-zinc-100 mt-6;
+}
+
+article.article-content p {
+  @apply text-sm md:text-base text-zinc-400 leading-relaxed;
+}
+
+article.article-content ul {
+  @apply list-disc list-inside text-sm md:text-base text-zinc-400 space-y-2;
+}
+
+article.article-content pre {
+  @apply bg-black/40 border border-zinc-900 rounded-lg p-4 overflow-x-auto text-sm text-zinc-200;
+}
+
+article.article-content code {
+  @apply text-emerald-300/80;
+}
+
+article.article-content pre code {
+  @apply text-zinc-200;
+}
+
+/* Custom Utilities */
+.glass-panel {
+    background: rgba(10, 10, 10, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.text-glow { 
+    text-shadow: 0 0 20px rgba(255,255,255,0.1); 
+}
+
+.mask-gradient {
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+.bg-grid-pattern {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+.bg-topo-lines {
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(16, 185, 129, 0.12) 0, transparent 45%),
+        radial-gradient(circle at 80% 10%, rgba(14, 165, 233, 0.08) 0, transparent 45%),
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 60px 60px, 60px 60px;
+}
+
+.bg-signal-map {
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(16, 185, 129, 0.2) 0, transparent 55%),
+        radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.2) 0, transparent 55%),
+        radial-gradient(circle at 60% 80%, rgba(148, 163, 184, 0.16) 0, transparent 50%);
+}
+
+.bg-signal-panel {
+    background-image:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        radial-gradient(circle at 30% 40%, rgba(16, 185, 129, 0.3) 0, transparent 50%);
+    background-size: 16px 16px, 16px 16px, 100% 100%;
+}
+
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #000;
+}
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 3px;
+}
+
+/* Animation Utilities for specific transforms not in Tailwind keyframes easily */
+.marquee-container {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
